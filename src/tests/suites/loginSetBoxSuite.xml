@@ -8,8 +8,20 @@
         <classes>
             <class name="tests.init.Login">
                 <methods>
-                    <!--<include name="Login"/>-->
+
+                    <include name="incorrectPassword"/>
                     <include name="incorrectLogin"/>
+                    <include name="incorrectLoginAndPassword"/>
+                    <include name="correctLoginUpper"/>
+                    <include name="correctLoginUpperLower"/>
+                    <include name="correctPasswordUpper"/>
+                    <include name="correctPasswordUpperLower"/>
+                    <include name="incorrectPasswordSpaceBegin"/>
+                    <include name="incorrectPasswordSpaceEnd"/>
+                    <include name="incorrectLoginSpaceBegin"/>
+                    <include name="incorrectLoginSpaceEnd"/>
+                    <include name="Login"/>
+
                 </methods>
             </class>
         </classes>

@@ -33,7 +33,7 @@ public class ChekedLoginPage {
         if($(byClassName("alert")).exists() || $(byClassName("help-block")).exists()){
             System.out.println("* Проверка некорректных данных: "+ status + " успешна");
         }else{
-            Assert.fail("Нет предупреждений о вводе некорректных данных: " + status);
+            Assert.fail("* Нет предупреждений о вводе некорректных данных: " + status);
         }
     }
 
@@ -43,12 +43,28 @@ public class ChekedLoginPage {
     }
 
     public static void checkLogin(){
-        System.out.println("> > Проверяю что пользователь вошел на главную страницу");
+        System.out.println("> > Проверяю, что пользователь вошел на главную страницу");
         if($(byClassName("Exit")).exists()){
-            System.out.println("Пользователь успешно вошел на главную страницу");
+            System.out.println("* Пользователь успешно вошел на главную страницу");
         }else{
-            Assert.fail("Не удалось войти под логином " + StaticParameters.login);
+            Assert.fail("* Не удалось войти под логином " + StaticParameters.login);
         }
+    }
+
+    public static void LogOut(){
+        System.out.println("> > Проверяю, что пользователь на главной странице");
+        if($(byClassName("Exit")).exists()) {
+            System.out.println("* Выхожу");
+            $(byClassName("Exit")).click();
+        }
+    }
+
+    public static void checkCaseIncorrectData(LoginPage loginPage){
+        LogOut();
+        fillField(loginPage);
+        clickSubmitBtn();
+        checkIncorrectValueField(loginPage.getStatus());
+        clearField();
     }
 
 }
