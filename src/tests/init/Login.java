@@ -63,6 +63,7 @@ public class Login {
 
     @Test(description = "Логинимся на сайт")
     public void Login() {
+        System.out.println("[ЛОГИНИМСЯ НА САЙТ]");
         LoginPage page = new LoginPage(StaticParameters.login, StaticParameters.password, "Корректный логин и пароль");
         ChekedLoginPage.LogOut();
         ChekedLoginPage.fillField(page);
@@ -83,66 +84,77 @@ public class Login {
 
     @Test(description = "Некорректный пароль")
     public void incorrectPassword() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ПАРОЛЬ]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru", "123456qwerty123", "Некорректный пароль");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Некорректный логин")
     public void incorrectLogin() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ЛОГИН]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru", "123456qwerty123", "Некорректный пароль");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Некорректный логин и некорректный пароль")
     public void incorrectLoginAndPassword() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ЛОГИН И ПАРОЛЬ]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbo", "123456qwer", "Некорректный логин и некорректный пароль");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Корректный логин с буквами верхнего регистра")
     public void correctLoginUpper() {
+        System.out.println("[КОРРЕКТНЫЙ ЛОГИН С БУКВАМ ВЕРЗНЕГО РЕГИСТРА]");
         LoginPage loginPage = new LoginPage("T.TESTOVYJ@INBOX.ru", "123456qwerty", "Корректный логин с буквами верхнего регистра");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Корректный логин с буквами верхнего и нижнего регистра")
     public void correctLoginUpperLower() {
+        System.out.println("[КОРРЕКТНЫЙ ЛОГИН С БУКВАМИ ВЕРХНЕГО И НИЖНЕО РЕГИСТРА]");
         LoginPage loginPage = new LoginPage("T.tEsToVyJ@InBoX.ru", "123456qwerty", "Корректный логин с буквами верхнего регистра и нижнего регистра");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Корректный пароль с буквами верхнего регистра")
     public void correctPasswordUpper() {
+        System.out.println("[КОРРЕКТНЫЙ ПАРОЛЬ С БУКВАМИ ВЕРХНЕГО РЕГИСТРА]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru", "123456QWERTY", "Корректный пароль с буквами верхнего регистра");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Корректный пароль с буквами верхнего и нижнего регистра")
     public void correctPasswordUpperLower() {
+        System.out.println("[КОРРЕКТНЫЙ ПАРОЛЬ С БУКВАМИ ВЕРХНЕГО И НИЖНЕГО РЕГИСТРА]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru", "123456QwErTy", "Корректный пароль с буквами верхнего и нижнего регистра");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Некорректный пароль с пробелами в начале")
     public void incorrectPasswordSpaceBegin() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ПАРОЛЬ С ПРОБЕЛАМИ В НАЧАЛЕ");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru", "   123456qwerty", "Некорректный пароль с пробелами в начале");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Некорректный пароль с пробелами в конце")
     public void incorrectPasswordSpaceEnd() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ПАРОЛЬ С ПРОБЕЛАМИ В КОНЦЕ]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru", "123456qwerty   ", "Некорректный пароль с пробелами в конце");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Некорректный логин с пробелами в начале")
     public void incorrectLoginSpaceBegin() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ПАРОЛЬ С ПРОБЕЛАМИ В НАЧАЛЕ]");
         LoginPage loginPage = new LoginPage("  t.testovyj@inbox.ru", "123456qwerty", "Некорректный логин с пробелами в начале");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
 
     @Test(description = "Некорректный логин с пробелами в конце")
     public void incorrectLoginSpaceEnd() {
+        System.out.println("[НЕКОРРЕКТНЫЙ ЛОГИН С ПРОБЕЛАМИ В КОНЦЕ]");
         LoginPage loginPage = new LoginPage("t.testovyj@inbox.ru   ", "123456qwerty", "Некорректный логин с пробелами в конце");
         ChekedLoginPage.checkCaseIncorrectData(loginPage);
     }
