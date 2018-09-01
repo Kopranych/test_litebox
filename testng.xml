@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Проверка сайта LiteBox">
+
+    <parameter name="baseUrl"
+               value="https://sa-rc.litebox.ru/accounts/login/"/>
+
+    <parameter name="login"
+               value="t.testovyj@inbox.ru"/>
+    <parameter name="password"
+               value="123456qwerty"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="holdBrowser" value="false"/>
+    <parameter name="reportsFolder" value="target/screenshots"/>
+    <parameter name="timeout" value="100000"/>
+    <parameter name="excludeVisuals" value="false"/>
+    <parameter name="delay" value="15"/>
+
+    <suite-files>
+        <suite-file path="src/tests/suites/loginSetBoxSuite.xml"/>
+    </suite-files>
+</suite>
